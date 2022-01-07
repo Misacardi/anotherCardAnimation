@@ -1,0 +1,175 @@
+:root {
+  --dark: rgb(13, 17, 19);
+  --light: #fff;
+  --accent: rgb(222, 52, 0);
+  --accent-dark: rgb(163, 38, 0);
+  --secondary: rgb(0, 76, 198);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+li, ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--dark);
+  color: var(--light);
+  margin-top: 200px;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.front {
+  transition: 250ms;
+}
+
+.game {
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+}
+.game__name {
+  margin: 10px 0;
+  transition: 250ms;
+}
+.game__img {
+  border-radius: 5%;
+}
+.game .rank {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  right: 25px;
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 81%, 0 100%, 0% 60%, 0 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 6px;
+}
+.game__streamers {
+  display: flex;
+}
+.game__streamers img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 2px solid var(--dark);
+}
+.game__streamers img:nth-of-type(1) {
+  transform: translateX(50%);
+  z-index: 1;
+}
+.game__streamers img:nth-of-type(2) {
+  transform: translateX(25%);
+}
+.game__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+}
+.game__stats .views {
+  padding: 0 5px;
+}
+.game__stats i {
+  display: flex;
+  font-size: 15px;
+  color: #7d7d81;
+}
+
+.back {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  left: 0;
+  bottom: -35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.back .btn {
+  cursor: pointer;
+  border: 0;
+  background: var(--secondary);
+  border-radius: 100vw;
+  color: var(--light);
+  font-weight: bold;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+}
+.back .streaming-info {
+  columns: 2;
+  column-rule: 1px solid rgba(255, 255, 255, 0.25);
+  margin: 10px 0;
+  text-align: center;
+}
+.back .streaming-info .game-stat {
+  font-size: 18px;
+}
+.back .streaming-info .game-stat span {
+  display: block;
+  font-size: 14px;
+}
+.back .streamers {
+  display: flex;
+}
+.back .streamers .streamer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.back .streamers .streamer img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+.back .streamers .streamer .name {
+  font-weight: bold;
+}
+
+.background {
+  background-color: #2b2d34;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform: scale(0.2, 0.9);
+  opacity: 0;
+  transition: 250ms;
+  border-radius: 3%;
+}
+
+.game:hover .back {
+  opacity: 1;
+  transition: 400ms;
+}
+.game:hover .front {
+  transform: translateY(-30%);
+}
+.game:hover .game__name {
+  transform: translateX(30%);
+}
+.game:hover .game__stats {
+  opacity: 0;
+}
+.game:hover .background {
+  transform: scale(1.4, 1.2);
+  opacity: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */
